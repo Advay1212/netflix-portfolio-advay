@@ -1,0 +1,50 @@
+.trending-row {
+  padding: 0 clamp(1rem, 4vw, 4rem);
+  margin-bottom: 2.5rem;
+}
+
+.trending-track-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.trending-track {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 24px 4px;
+  scrollbar-width: none;
+}
+
+.trending-track::-webkit-scrollbar { display: none; }
+
+.trending-track > * {
+  scroll-snap-align: start;
+}
+
+.trending-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: rgba(20, 20, 20, 0.85);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  width: 40px;
+  height: 72px;
+  border-radius: 4px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.trending-arrow:hover { background: rgba(255,255,255,0.15); }
+
+.trending-arrow--left  { left: -20px; }
+.trending-arrow--right { right: -20px; }

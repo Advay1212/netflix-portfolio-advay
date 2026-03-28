@@ -1,88 +1,74 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Certifications.css';
-import { FaExternalLinkAlt, FaUniversity } from 'react-icons/fa';
-import { SiUdemy, SiCoursera, SiIeee } from 'react-icons/si';
-import { Certification } from '../types';
-import { getCertifications } from '../queries/getCertifications';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+import { SiOracle, SiAmazon } from 'react-icons/si';
+import { FaLink } from 'react-icons/fa';
 
-const iconData: { [key: string]: JSX.Element } = {
-  udemy: <SiUdemy />,
-  coursera: <SiCoursera />,
-  ieee: <SiIeee />,
-  university: <FaUniversity />,
-};
+interface CertItem {
+  title: string;
+  issuer: string;
+  issuedDate: string;
+  link: string;
+  icon: JSX.Element;
+}
+
+const certifications: CertItem[] = [
+  {
+    title: 'Oracle Cloud Infrastructure Certified GenAI Professional',
+    issuer: 'Oracle',
+    issuedDate: '2024',
+    link: 'https://www.linkedin.com/in/advay-suryavanshi-55089b259/overlay/Certifications/1207222625/treasury/?profileId=ACoAAD-rVkwBt1nn3WCXDeXu_IoFpVjEEmcoMgA',
+    icon: <SiOracle />,
+  },
+  {
+    title: 'LangGraph Foundation',
+    issuer: 'LangChain Academy',
+    issuedDate: '2024',
+    link: 'https://academy.langchain.com/certificates/p0wv26fvim',
+    icon: <FaLink />,
+  },
+  {
+    title: 'LangChain for LLM Application Development',
+    issuer: 'DeepLearning.AI',
+    issuedDate: '2024',
+    link: 'https://learn.deeplearning.ai/accomplishments/88114f18-5f70-488e-bb7b-bf5f5d66e475?usp=sharing',
+    icon: <FaLink />,
+  },
+  {
+    title: 'AWS Generative AI Practitioner',
+    issuer: 'Amazon Web Services',
+    issuedDate: '2024',
+    link: 'https://www.linkedin.com/in/advay-suryavanshi-55089b259/overlay/Certifications/351579938/treasury/?profileId=ACoAAD-rVkwBt1nn3WCXDeXu_IoFpVjEEmcoMgA',
+    icon: <SiAmazon />,
+  },
+];
 
 const Certifications: React.FC = () => {
-  const [certifications, setCertifications] = useState<Certification[]>([]);
-  const [isLoading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let ignore = false;
-    async function fetchCertifications() {
-      try {
-        const data = await getCertifications();
-        if (!ignore) {
-          setCertifications(data);
-        }
-      } catch (error) {
-        console.error('Unable to load certifications', error);
-      } finally {
-        if (!ignore) {
-          setLoading(false);
-        }
-      }
-    }
-
-    fetchCertifications();
-    return () => {
-      ignore = true;
-    };
-  }, []);
-
-  const showPlaceholder = !isLoading && certifications.length === 0;
-
   return (
     <div className="certifications-container">
       <h2 className="certifications-title">Certifications & Badges</h2>
-      {isLoading && <p className="certifications-status">Loading credentials...</p>}
-      {showPlaceholder && (
-        <div className="certifications-placeholder">
-          <p>Verified badges and nano-degrees are being curated.</p>
-          <p>Check back soon or peek at my LinkedIn for the latest completions.</p>
+      <div className="certifications-grid">
+        {certifications.map((cert, index) => (
           <a
-            href="https://www.linkedin.com/in/oludolapo-adegbesan-3168a7218/"
+            href={cert.link}
+            key={index}
             target="_blank"
             rel="noopener noreferrer"
+            className="certification-card"
+            style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}
           >
-            Visit LinkedIn
+            <div className="certification-content">
+              <div className="certification-icon">{cert.icon}</div>
+              <h3>{cert.title}</h3>
+              <p>{cert.issuer}</p>
+              <span className="issued-date">Issued {cert.issuedDate}</span>
+            </div>
+            <div className="certification-link animated-icon">
+              <FaExternalLinkAlt />
+            </div>
           </a>
-        </div>
-      )}
-
-      {!showPlaceholder && certifications.length > 0 && (
-        <div className="certifications-grid">
-          {certifications.map((cert, index) => (
-            <a
-              href={cert.link}
-              key={index}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certification-card"
-              style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}
-            >
-              <div className="certification-content">
-                <div className="certification-icon">{iconData[cert.iconName] || <FaUniversity />}</div>
-                <h3>{cert.title}</h3>
-                <p>{cert.issuer}</p>
-                {cert.issuedDate && <span className="issued-date">Issued {cert.issuedDate}</span>}
-              </div>
-              <div className="certification-link animated-icon">
-                <FaExternalLinkAlt />
-              </div>
-            </a>
-          ))}
-        </div>
-      )}
+        ))}
+      </div>
     </div>
   );
 };

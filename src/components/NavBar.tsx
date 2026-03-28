@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope, FaAward, FaHandsHelping } from 'react-icons/fa'; // Import icons
 import './Navbar.css';
-import netflixLogo from '../images/intro-logo.png';
+import netflixLogo from '../images/ADVAYNETFLIX.png';
 import blueImage from '../images/blue.png';
 
 const Navbar: React.FC = () => {

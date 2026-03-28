@@ -1,0 +1,263 @@
+/* ── Card poster ── */
+.pc-card {
+  flex: 0 0 auto;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: visible;
+  transition: transform 0.25s ease, z-index 0s;
+  position: relative;
+  z-index: 1;
+}
+
+.pc-card:hover,
+.pc-card:focus-visible {
+  transform: scale(1.22);
+  z-index: 10;
+  outline: none;
+}
+
+.pc-poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.pc-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.25s ease;
+}
+
+.pc-card:hover .pc-poster img {
+  filter: brightness(0.55);
+}
+
+/* ── Badges ── */
+.pc-badge {
+  position: absolute;
+  top: 8px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 7px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.pc-badge--original {
+  left: 8px;
+  background: #e50914;
+  color: #fff;
+}
+
+.pc-badge--award {
+  right: 8px;
+  background: #f5c518;
+  color: #141414;
+}
+
+/* ── Hover overlay ── */
+.pc-hover-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
+}
+
+.pc-card:hover .pc-hover-overlay,
+.pc-card:focus-visible .pc-hover-overlay {
+  opacity: 1;
+}
+
+.pc-match {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #46d369;
+}
+
+.pc-match--lg {
+  font-size: 0.95rem;
+  position: static;
+}
+
+.pc-hover-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 2px 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pc-hover-tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.pc-tag {
+  background: rgba(255,255,255,0.15);
+  color: #e5e5e5;
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ── Modal backdrop ── */
+.pc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: pc-fade-in 0.2s ease;
+}
+
+@keyframes pc-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal ── */
+.pc-modal {
+  background: #181818;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: pc-slide-up 0.25s ease;
+  scrollbar-width: thin;
+  scrollbar-color: #444 transparent;
+}
+
+@keyframes pc-slide-up {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.pc-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.pc-modal-close:hover { background: rgba(255,255,255,0.2); }
+
+/* ── Modal hero ── */
+.pc-modal-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.pc-modal-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #181818 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+}
+
+.pc-modal-hero-content {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  right: 24px;
+}
+
+.pc-modal-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 6px 0 4px;
+}
+
+.pc-modal-subtitle {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0;
+}
+
+/* ── Modal body ── */
+.pc-modal-body {
+  padding: 20px 24px 28px;
+}
+
+.pc-modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.pc-modal-date {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.pc-modal-desc {
+  font-size: 0.95rem;
+  color: #d2d2d2;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.pc-modal-bullets {
+  padding-left: 18px;
+  margin-bottom: 16px;
+}
+
+.pc-modal-bullets li {
+  font-size: 0.88rem;
+  color: #c8c8c8;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.pc-modal-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pc-modal-tags-label {
+  font-size: 0.8rem;
+  color: #888;
+  margin-right: 4px;
+}

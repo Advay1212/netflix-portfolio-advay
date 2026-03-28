@@ -12,39 +12,45 @@ const Browse: React.FC = () => {
 
   const profiles = [
     {
-      name: "recruiter",
+      name: 'recruiter',
+      label: 'Recruiter',
       image: blueImage,
-      backgroundGif: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" // Conference room vibes inspired by The Office
+      backgroundGif: 'https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif',
     },
     {
-      name: "developer",
+      name: 'engineer',
+      label: 'Engineer',
       image: greyImage,
-      backgroundGif: "https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" // Classic Matrix code rain
+      backgroundGif: 'https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif',
     },
     {
-      name: "stalker",
+      name: 'researcher',
+      label: 'Researcher',
       image: redImage,
-      backgroundGif: "https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif" // Noir silhouette for mysterious watcher
+      backgroundGif: 'https://media.giphy.com/media/3o7btNa0RUYa5E7iiQ/giphy.gif',
     },
     {
-      name: "adventurer",
+      name: 'guest',
+      label: 'Guest',
       image: yellowImage,
-      backgroundGif: "https://media.giphy.com/media/xT0xelrGA7QtTNPaoA/giphy.gif" // Tomb-raiding torch-lit exploration
+      backgroundGif: 'https://media.giphy.com/media/xT0xelrGA7QtTNPaoA/giphy.gif',
     },
   ];
 
   const handleProfileClick = (profile: { name: string; image: string; backgroundGif: string }) => {
-    navigate(`/profile/${profile.name}`, { state: { profileImage: profile.image, backgroundGif: profile.backgroundGif } });
+    navigate(`/profile/${profile.name}`, {
+      state: { profileImage: profile.image, backgroundGif: profile.backgroundGif },
+    });
   };
 
   return (
     <div className="browse-container">
-      <p className='who-is-watching'>Who's Watching?</p>
+      <p className="who-is-watching">Who's Watching?</p>
       <div className="profiles">
         {profiles.map((profile, index) => (
           <ProfileCard
             key={index}
-            name={profile.name}
+            name={profile.label}
             image={profile.image}
             onClick={() => handleProfileClick(profile)}
           />

@@ -1,17 +1,17 @@
 import React from 'react';
 import './ContactMe.css';
-import profilePic from '../images/profile-light-formal.png';
+import profilePic from '../images/ADVAY_PIC.jpg';
 import { FaCoffee, FaLinkedin } from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
 
 const contactInfo: IContactMe = {
   profilePicture: { url: profilePic },
-  name: 'Oludolapo Adegbesan',
-  title: 'Full Stack AI & Cloud Software Engineer',
+  name: 'Advay Suryavanshi',
+  title: 'Generative AI & Machine Learning Engineer',
   summary:
-    'Experienced software engineer focused on distributed systems, AI copilots, and cloud-native services. I build LLM-powered Chrome extensions, LangChain automation, and React experiences backed by Python, TypeScript, Flask, Node.js, MongoDB, Redis, and AWS. From Gemini-driven privacy tooling at Google to GPT copilots for HP FOWA, I ship scalable APIs, craft amazing developer experiences, and center inclusive design in every release.',
-  companyUniversity: 'Fisk University · B.S. Computer Science · Dec 2026',
-  linkedinLink: 'https://www.linkedin.com/in/oludolapo-adegbesan-3168a7218/',
+    'Generative AI & ML Engineer with hands-on production experience building RAG pipelines, computer vision systems, and LLM-powered applications. From engineering enterprise document search at Softtek India to deploying edge AI on Jetson Nano at Carbine Systems, I ship AI that works in the real world. Passionate about LangChain, PyTorch, Azure OpenAI, and turning cutting-edge research into scalable products.',
+  companyUniversity: 'B.Tech Computer Engineering · 2026',
+  linkedinLink: 'https://www.linkedin.com/in/advay-suryavanshi-55089b259/',
   email: '',
   phoneNumber: '',
 };
@@ -20,8 +20,8 @@ const ContactMe: React.FC = () => {
   return (
     <div className="contact-container">
       <section className="contact-hero">
-        <p className="hero-eyebrow">Now Booking New Work</p>
-        <h1>Full Stack AI & Cloud Software Engineer</h1>
+        <p className="hero-eyebrow">Now Booking in India</p>
+        <h1>Generative AI & Machine Learning Engineer</h1>
         <p className="hero-copy">{contactInfo.summary}</p>
         <div className="hero-buttons">
           <a
@@ -37,7 +37,7 @@ const ContactMe: React.FC = () => {
 
       <section className="contact-grid">
         <div className="linkedin-badge-custom">
-          <img src={contactInfo.profilePicture.url} alt="Oludolapo Adegbesan" className="badge-avatar" />
+          <img src={contactInfo.profilePicture.url} alt="Advay Suryavanshi" className="badge-avatar" />
           <div className="badge-content">
             <h3 className="badge-name">{contactInfo.name}</h3>
             <p className="badge-title">{contactInfo.title}</p>

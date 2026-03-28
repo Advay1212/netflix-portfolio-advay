@@ -6,7 +6,7 @@
 
 ## Developers
 
-* Adegbesan Dolapo
+* Advay Suryavanshi
 * Mehreen Salwa
 * Jagjot Singh Saini
 

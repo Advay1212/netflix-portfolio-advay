@@ -1,39 +1,39 @@
 import React from 'react';
 import './Blogs.css';
-import { FaMedium, FaDev, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaMedium, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const blogs = [
   {
-    title: 'Building Studyme (AI Study Companion)',
-    platform: 'GitHub Notes',
+    title: 'Forget What You Know About AI Chatbots: A Real Guide to Building a RAG System That Actually Works',
+    platform: 'Medium',
+    icon: <FaMedium />,
+    link: 'https://medium.com/@advay-12/forget-what-you-know-about-ai-chatbots-a-real-guide-to-building-a-rag-system-that-actually-works-d8e4b5c55cf3',
+    description: 'A no-fluff, production-focused guide to building RAG systems that actually work — covering chunking strategies, hybrid retrieval, hallucination reduction, and deployment lessons from the field.',
+  },
+  {
+    title: 'Building JARVIS — My Personal AI Assistant',
+    platform: 'GitHub',
     icon: <FaGithub />,
-    link: 'https://github.com/Havcker243',
-    description: 'Architecture sketches, caching experiments, and evaluation prompts for my document assistant.',
+    link: 'https://github.com/Advay1212',
+    description: 'How I built a GPT-4o powered assistant with voice I/O, ChromaDB memory, and tool-use from scratch.',
   },
   {
-    title: 'PathFinderGPT Create-a-thon Recap',
-    platform: 'Portfolio',
-    icon: <FaDev />,
-    link: 'https://havcker243.github.io/Portfolio/',
-    description: 'How our team prototyped career maps for HBCU students with Flask, React, and OpenAI.',
-  },
-  {
-    title: 'Inclusive Engineering Dispatch',
+    title: 'RAG in Production — Lessons from Softtek',
     platform: 'LinkedIn',
     icon: <FaLinkedin />,
-    link: 'https://www.linkedin.com/in/oludolapo-adegbesan-3168a7218/',
-    description: 'Stories from Brilliant Black Minds, MLT, and the communities that shaped my voice.',
+    link: 'https://www.linkedin.com/in/advay-suryavanshi-55089b259/',
+    description: 'What I learned building a 5,000-doc enterprise RAG pipeline with LangChain and Azure OpenAI.',
   },
   {
-    title: 'Multicloud-in-the-making',
-    platform: 'Medium (coming soon)',
-    icon: <FaMedium />,
-    link: 'https://medium.com/@havcker243',
-    description: 'Drafting lessons from deploying on AWS, Firebase, and GCP as a student engineer.',
+    title: 'Edge AI on Jetson Nano — Sensor Fusion Deep Dive',
+    platform: 'LinkedIn',
+    icon: <FaLinkedin />,
+    link: 'https://www.linkedin.com/in/advay-suryavanshi-55089b259/',
+    description: 'Deploying lightweight CNNs for real-time multi-modal sensor fusion at Carbine Systems.',
   },
 ];
 
-const showComingSoon = true;
+const showComingSoon = false;
 
 const Blogs: React.FC = () => {
   const hasPosts = !showComingSoon && blogs.length > 0;
@@ -41,7 +41,7 @@ const Blogs: React.FC = () => {
   return (
     <div className="blogs-container">
       <h2 className="blogs-title">Writing & reflections</h2>
-      <p className="blogs-intro">Where I unpack the builds, fellowships, and community work behind this portfolio.</p>
+      <p className="blogs-intro">Where I unpack GenAI builds, ML research, and engineering lessons.</p>
 
       {hasPosts ? (
         <div className="blogs-grid">
@@ -68,7 +68,7 @@ const Blogs: React.FC = () => {
           <p>Fresh blogs and LinkedIn write-ups are on the way.</p>
           <p>I'm packaging Build in Public recaps, fellowship takeaways, and design journals next.</p>
           <a
-            href="https://www.linkedin.com/in/oludolapo-adegbesan-3168a7218/"
+            href="https://www.linkedin.com/in/advay-suryavanshi-55089b259/"
             target="_blank"
             rel="noopener noreferrer"
           >

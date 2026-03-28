@@ -1,38 +1,70 @@
-.netflix-container {
+.nt-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background-color: #141414;
+  cursor: pointer;
   overflow: hidden;
+  gap: 16px;
+  user-select: none;
 }
 
-.netflix-logo {
-  width: 500px;
-  height: auto;
+.nt-hint {
+  color: #888;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  height: 1.2em;
+  transition: opacity 0.4s;
+}
+
+/* ── The ADVAY word ── */
+.nt-word {
+  display: flex;
+  gap: 0.05em;
+}
+
+.nt-letter {
+  font-size: clamp(5rem, 18vw, 14rem);
+  font-weight: 900;
+  color: #e50914;
+  line-height: 1;
+  opacity: 0.15;
+  text-shadow: 0 0 0px #e50914;
+  transition: opacity 0.15s ease, text-shadow 0.3s ease, transform 0.3s ease;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.nt-letter--lit {
+  opacity: 1;
+  text-shadow: 0 0 40px rgba(229, 9, 20, 0.8), 0 0 80px rgba(229, 9, 20, 0.4);
+  transform: scaleY(1.04);
+}
+
+/* Zoom-out exit when animate class is added */
+.nt-word--animate {
+  animation: nt-zoom-out 3.6s 0.9s forwards ease-in-out;
+}
+
+@keyframes nt-zoom-out {
+  0%   { transform: scale(1);   opacity: 1; }
+  70%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(4);   opacity: 0; }
+}
+
+.nt-tagline {
+  color: #aaa;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 8px;
   opacity: 0;
-  transform: scale(0.8);
-  animation: fadeIn 0.5s forwards ease-in;
+  animation: nt-fade-in 0.8s 0.3s forwards ease;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate.netflix-logo {
-  animation: zoomOut 3s forwards ease-in-out;
-}
-
-@keyframes zoomOut {
-  0%, 80% {
-    transform: scale(0.8);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(3);
-    opacity: 0;
-  }
+@keyframes nt-fade-in {
+  to { opacity: 1; }
 }

@@ -6,15 +6,15 @@ import { ProfileBanner as ProfileBannerType } from '../types';
 
 const bannerData: ProfileBannerType = {
   backgroundImage: {
-    url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80',
+    url: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80',
   },
-  headline: 'Full Stack AI & Cloud Software Engineer',
+  headline: 'Generative AI & Machine Learning Engineer',
   resumeLink: {
-    url: '/Adegbesan_Oludolapo_Resume__2_.pdf',
+    url: '/Advay_Resume.pdf',
   },
-  linkedinLink: 'https://www.linkedin.com/in/oludolapo-adegbesan-3168a7218/',
+  linkedinLink: 'https://www.linkedin.com/in/advay-suryavanshi-55089b259/',
   profileSummary:
-    "From building privacy tools at Google to creating GPT agents that help HBCU students find housing and jobs, I design software that makes complex things simple. I work across the stack (React, Python, TypeScript, cloud platforms) crafting AI powered products that scale cleanly and feel effortless to use. Code2040, MLT, and BVCC taught me that engineering isn't just about shipping code; it's about understanding who you build for and opening doors with every release.",
+    'From engineering RAG pipelines over 5,000+ enterprise documents at Softtek to building award-winning predictive maintenance systems, I turn cutting-edge ML research into production-grade AI. I work across the GenAI stack — LangChain, Azure OpenAI, PyTorch, FastAPI — shipping systems that reduce costs, automate workflows, and scale cleanly. Passionate about the intersection of Generative AI, computer vision, and real-world impact.',
 };
 
 interface ProfileBannerProps {
