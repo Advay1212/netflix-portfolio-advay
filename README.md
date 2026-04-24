@@ -2,24 +2,12 @@
 
 This repository powers my personal website, a Netflix-inspired experience that turns my resume into something you can actually binge. Visitors land on the familiar Netflix sting, pick a persona tile, and then explore rows of projects, fellowships, awards, playlists, and reading lists. All of the copy, media, and AMA context can be refreshed from Supabase and live GitHub data so the site stays current without a redeploy.
 
-![Preview](readmes/main-layout.png)
-
 ## Experience Overview
 - **Cinematic intro -> persona gate.** One click triggers the Netflix audio sting and fans out persona tiles. Each persona injects its own GIF background so every visitor gets a bespoke home screen.
 - **Profile rows like a streaming app.** The hero banner links to my resume and LinkedIn, and Top Picks / Continue Watching rows surface curated sections depending on the selected persona.
 - **Deep-dive sections for every audience.** Dedicated routes walk through work experience, skills, projects, awards, certifications, recommendations, music, reading, blogs, and work permits using the same responsive layout.
 - **Ask Me Anything powered by Gemini.** OA Bot reads Supabase data about my experience and streams conversational markdown answers so people can chat instead of scrolling forever.
 - **Live GitHub + Supabase content.** Spotlight cards hydrate with README summaries and cover art from GitHub, while Supabase tables keep the timeline, skills, and contact info editable without code changes.
-
-## Screenshots
-![Persona Selector](readmes/browser-page.png)
-_Netflix-style persona gate that sets the tone and swaps background GIFs once a visitor chooses who they are._
-
-![Recruiter Hero](readmes/recruiter-hero.png)
-_Recruiter persona home screen with the hero banner, resume + LinkedIn CTAs, and the navbar that unlocks deeper routes._
-
-![OA Bot Chat](readmes/bot-page.png)
-_Gemini-backed AMA panel answering questions with live context from Supabase so visitors can chat about my story._
 
 ## Highlights
 - **Intro + persona gate** with custom audio, animated GIF avatars, and router state to theme the profile page.
